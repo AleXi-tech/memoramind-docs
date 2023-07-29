@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Account Deletion Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .tooltiptext {
+            visibility: hidden;
+            width: 220px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            top: 130%;
+            left: 50%;
+            margin-left: -110px;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <h2>Account Deletion Request</h2>
+    <div class="tooltip">
+        <input type="text" placeholder="Enter your account email" id="emailInput">
+        <span class="tooltiptext" id="tooltipText">Your account deletion request has been received. We will notify you shortly.</span>
+    </div>
+    <br>
+    <button onclick="showTooltip()">Delete Account</button>
+
+    <script>
+        function showTooltip() {
+            var tooltip = document.getElementById("tooltipText");
+            var input = document.getElementById("emailInput");
+            var button = document.querySelector("button");
+
+            tooltip.style.visibility = "visible";
+            input.style.display = "none";
+            button.style.display = "none";
+
+            setTimeout(function() {
+                tooltip.style.visibility = "hidden";
+                input.style.display = "block";
+                button.style.display = "block";
+            }, 3000); // Hide tooltip after 3 seconds (3000 milliseconds)
+        }
+    </script>
+</body>
+</html>
